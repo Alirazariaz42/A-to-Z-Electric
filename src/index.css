@@ -1,0 +1,433 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+  scrollbar-color: #351111 #db1515; 
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+/* Style the scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #03bd5c; /* Color of the handle */
+  border-radius: 10px; /* Round corners of the handle */
+}
+
+/* Style the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #099f7a;
+}
+
+.button-gradient {
+  background: linear-gradient(to right, #03bd5c 0%, #099f7a 100%);
+  /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom, #099f7a 30%, #03bd5c 100%);
+  /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+.text-gradient-two {
+  background: linear-gradient(to bottom, black 30%, #03bd5c 100%);
+  /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.textt-gradient {
+  background: linear-gradient(to bottom, #23c483 30%, #097a60 100%);
+  /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+
+/* ...................................... */
+
+.round-class{
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+/* ...................................... */
+
+.class-hide-nav {
+  display: block;
+}
+
+.class-transition:hover{
+  transition: 0.5s cubic-bezier(.02,.97,1,-0.03);
+}
+/* ............................toggle-responsive-screen........................ */
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #03bd5c 0%, #099f7a 100%);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
+/* ............................button.................................. */
+
+button {
+  padding: 14px 2em;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: white;
+  background-color: #099f7a;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+/* ......................................... */
+.blocking {
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.blocking:hover {
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.blocking:active {
+  transform: translateY(-1px);
+}
+/* ...............nav-btn.................. */
+
+.btn {
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  padding: 10px 10px;
+  color: white;
+  /* text-transform: uppercase; */
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #03bd5c;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  color: white;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #03bd5c;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+
+/* ...................................... */
+
+.class-short {
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+  transition: 0.5s linear;
+  opacity: 0;
+}
+.class-styele:hover .class-short {
+  bottom: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #03bd5d85;
+  transition: 0.5s linear;
+  opacity: 1;
+}
+
+/* ..................................... */
+
+/* The loader container */
+.loader {
+  width: 200px;
+  height: 200px;
+  perspective: 200px;
+}
+
+
+/* The dot */
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -60px;
+  border-radius: 100px;
+  border: 40px outset #064b3b;
+  transform-origin: 50% 50%;
+  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  background-color: transparent;
+  animation: dot1 1800ms cubic-bezier(.49,.06,.43,.85) infinite;
+}
+
+.dot:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  margin-top: -70px;
+  margin-left: -70px;
+  border-width: 30px;
+  border-color: #03bd5c;
+  animation-name: dot2;
+  animation-delay: 75ms;
+  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+}
+
+.dot:nth-child(3) {
+  width: 160px;
+  height: 160px;
+  margin-top: -80px;
+  margin-left: -80px;
+  border-width: 20px;
+  border-color: #099f7a;
+  animation-name: dot3;
+  animation-delay: 150ms;
+  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+}
+
+@keyframes dot1 {
+  0% {
+    border-color: #03bd5c;
+    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  }
+
+  50% {
+    border-color: #03bd5c;
+    transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
+  }
+
+  100% {
+    border-color: #064b3b;
+    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  }
+}
+
+@keyframes dot2 {
+  0% {
+    border-color: #064b3b;
+    box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
+    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  }
+
+  50% {
+    border-color: #03bd5c;
+    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
+    transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
+  }
+
+  100% {
+    border-color: #03bd5c;
+    box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
+    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  }
+}
+
+@keyframes dot3 {
+  0% {
+    border-color: #03bd5c;
+    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  }
+
+  50% {
+    border-color: #03bd5c;
+    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
+    transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
+  }
+
+  100% {
+    border-color: #064b3b;
+    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+  }
+}
+
+/* .................................. */
+
+/* ....................................... */
+
+.navbarr {
+  transition: background-color 0.8s ease;
+}
+
+.navbarr.scrolled {
+  background-color: #064b3b;
+}
+/* .........................map-...................... */
+
+.responsive-map{
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 50%;
+}
+
+.iframe-classes {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+
+/* .......................................... */
+.textarea {
+  color: #a5a3a3; /* Sets text color to dark gray */
+  background-color: #f9f9f9; /* Sets background color to light gray */
+  border: 1px solid #cccccc; /* Sets border color */
+  padding: 10px; /* Adds padding inside the textarea */
+  font-family: Arial, sans-serif; /* Sets font family */
+  font-size: 15px; /* Sets font size */
+  border-radius: 6px;
+  resize: none;
+  background-color: transparent;
+  margin-top: 15px;
+  width: 95%;
+}
+/* ...................................... */
+/* @keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+[data-aos="bounce"] {
+  animation-name: bounce;
+  animation-duration: 2s; 
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+} */
+
+/* ....................media queries............................ */
+
+@media (max-width: 767px) {
+  .class-hide-nav {
+    display: none;
+  }
+}
